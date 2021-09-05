@@ -26,6 +26,12 @@ pip install tinyaes
 # Компиляция
 В папке с проектом создайте папку src и перенесите все файлы проекта в неё.
 Дальше вам нужно скачать spec файл: https://drive.google.com/file/d/15yt15IZPLcq5A61meWWFVkkX1mMAIwzP/view?usp=sharing
+
+Как это будет выглядеть:
+
+![image](https://user-images.githubusercontent.com/63918733/132127147-18f262f0-bce3-4865-a8c2-c2c708037b93.png)
+
+
 В самом spec файлы нужно изменить следующие строки:
 
 Названия приложения
