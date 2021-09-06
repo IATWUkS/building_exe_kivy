@@ -37,15 +37,6 @@ pip install tinyaes
 Названия приложения
 
 app_name = 'rbplay'
-
-Все дополнительные файлы, которые должны быть включены в exe
-
-added_files = [
-         ( 'src\\devices_list.json', '.'),
-         ( 'src\\settings\\devices_list.json', '.'),
-         ( 'src\\settings\\states.json', '.'),
-         ( 'src\\lock_screen\\states.json', '.'),
-         ] 
          
 Путь к папке с проектом
 
@@ -65,18 +56,42 @@ python -m PyInstaller single.spec
 
 После ждем компиляции всего проекта, exe появится в папке dist
 
-Готово)
-# Некоторые дополнительные моменты
-Если у вас заданы пути к вашим json файлам в коде, то задайте переменную, в ней будет хранится путь к временным файлам.
+# Создание установщика
 
-TEMP_FOLDER = str(sys._MEIPASS).replace('\\', '/') + '/'
+Если в проекте есть json, txt и прочие файлы, с которыми программа взаимодействует, кроме .py, то переместите .exe из dist в папку с этими файлами. Пример:
 
-И добавте её ко всем путям, пример:
+![image](https://user-images.githubusercontent.com/63918733/132245915-222c538a-2034-4148-b697-3fab7d189e03.png)
+![image](https://user-images.githubusercontent.com/63918733/132245925-74815364-83fa-41fd-a503-b51b25778c65.png)
+![image](https://user-images.githubusercontent.com/63918733/132245935-cb0a96c3-a80d-4f88-b473-556c98e659d8.png)
 
-with open(TEMP_FOLDER + 'settings/states.json', 'w', encoding='utf16') as write_data_file:
+Удобнее всего будет создать новую папку и скопировать сам .exe и json файлы.
+Важно сохранить структуру проекта, которая была до этого.
 
-До этого импортируйте модуль sys
+## Создание sfx архива
+Нужен WinRar.
 
-import sys
+Правой кнопкой мыши по папке, куда вы перекинули .exe и json
 
-Скорее всего ваш редактор кода будет ругаться, что в модули sys нет _MEIPASS, но дело в том, что его добавляет сам pyinstaller и он может существовать только уже готовом исходнике.
+![image](https://user-images.githubusercontent.com/63918733/132247769-bd4431b6-4f8e-46ea-90cf-1091a26c825a.png)
+
+После:
+
+![image](https://user-images.githubusercontent.com/63918733/132247810-090693ed-25fe-4d3d-872e-fafe83131ed0.png)
+
+Дальше:
+
+![image](https://user-images.githubusercontent.com/63918733/132247906-aff74286-a8ff-4be4-a062-188f9c79ee90.png)
+
+Переходим вкладку
+
+![image](https://user-images.githubusercontent.com/63918733/132247870-97318eb6-7c25-48a1-86be-0230db9eac83.png)
+
+Нажимаем на кнопку
+
+![image](https://user-images.githubusercontent.com/63918733/132247920-953c2ef4-7eed-4b42-a7cf-d1a55461ff78.png)
+
+Вводим путь
+
+![image](https://user-images.githubusercontent.com/63918733/132247967-97053511-dff1-4393-aae1-ff1912425978.png)
+
+Жмем ок и создаем sfx архив. На этом все.
