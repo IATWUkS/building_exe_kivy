@@ -1,60 +1,53 @@
 # building_exe_kivy
-Нужные модули:
+Изначально устанавливаем python последней версии с официального сайта (python.org). При установки добавляем в PATH.
 
+**Устанавливаем нужные модули:
+**
 setuptools
-
 wheel
-
 kivy
-
 pyinstaller
-
 pycrypto
+
+
 # Изменения некоторых файлов в site_packages
-Перейдите по пути C:\Users\имя_компьютера\AppData\Local\Programs\Python\Python39\Lib\site-packages\kivy\deps
+1. Перейдите по пути C:\Users\имя_компьютера\AppData\Local\Programs\Python\Python39\Lib\site-packages\kivy\deps
 
-Откройте файл __unit__.py редактором и добавте следующие строки:
-
+2. **Откройте файл __unit__.py редактором и добавте следующие строки:**
 import sdl2
 import glew
 
-После установите модуль tinyaes
-
+**После установите модуль tinyaes:**
 pip install tinyaes
 ## Важно, для установки модулей нужен Windows 10 SDK build tools
 
+
 # Компиляция
 В папке с проектом создайте папку src и перенесите все файлы проекта в неё.
-Дальше вам нужно скачать spec файл: https://drive.google.com/file/d/15yt15IZPLcq5A61meWWFVkkX1mMAIwzP/view?usp=sharing
+Дальше вам нужно скачать spec файл: https://drive.google.com/file/d/11m9A_9qVl2Dpdv5sXpkFDECTaYrVMwJA/view?usp=sharing.
 
 Как это будет выглядеть:
-
 ![image](https://user-images.githubusercontent.com/63918733/132127147-18f262f0-bce3-4865-a8c2-c2c708037b93.png)
 
-
-В самом spec файлы нужно изменить следующие строки:
-
-Названия приложения
-
-app_name = 'rbplay'
+**В самом spec файлы нужно изменить следующие строки:
+**
+Названия приложения: app_name = 'rbplay'
          
-Путь к папке с проектом
+Путь к папке с проектом: pathex=['C:\\Users\\имя_компьютера\\Desktop\\rbplay-master']
 
-pathex=['C:\\Users\\имя_компьютера\\Desktop\\rbplay-master']
+_Важно, указывать путь нужно не к src папке, а к начальной, где находится сама папка src._
 
-Важно, указывать путь нужно не к src папке, а к начальной, где находится сама папка src
+После открываем консоль и в ней переходим в нашу папку с spec файлом/
 
-После открываем консоль и в ней переходим в нашу папку с spec файлом
-
-Пример:
-
+**Пример:
+**
 cd C:\\Users\\имя_компьютера\\Desktop\\rbplay-master
 
-Вводим команду
-
+Вводим команду:
 python -m PyInstaller single.spec
 
-После ждем компиляции всего проекта, exe появится в папке dist
+После ждем компиляции всего проекта, exe появится в папке dist.
+
 
 # Создание установщика
 
@@ -70,7 +63,7 @@ python -m PyInstaller single.spec
 ## Создание sfx архива
 Нужен WinRar.
 
-Правой кнопкой мыши по папке, куда вы перекинули .exe и json
+Правой кнопкой мыши по папке, куда вы перекинули .exe и json.
 
 ![image](https://user-images.githubusercontent.com/63918733/132247769-bd4431b6-4f8e-46ea-90cf-1091a26c825a.png)
 
@@ -82,16 +75,16 @@ python -m PyInstaller single.spec
 
 ![image](https://user-images.githubusercontent.com/63918733/132247906-aff74286-a8ff-4be4-a062-188f9c79ee90.png)
 
-Переходим вкладку
+Переходим вкладку:
 
 ![image](https://user-images.githubusercontent.com/63918733/132247870-97318eb6-7c25-48a1-86be-0230db9eac83.png)
 
-Нажимаем на кнопку
+Нажимаем на кнопку:
 
 ![image](https://user-images.githubusercontent.com/63918733/132247920-953c2ef4-7eed-4b42-a7cf-d1a55461ff78.png)
 
-Вводим путь
+Вводим путь:
 
 ![image](https://user-images.githubusercontent.com/63918733/132247967-97053511-dff1-4393-aae1-ff1912425978.png)
 
-Жмем ок и создаем sfx архив. На этом все.
+На этом все.
