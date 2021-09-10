@@ -1,4 +1,6 @@
 # building_exe_kivy
+Рекомендуемая версия python3.6, для запуска программы на Windows 7
+
 Нужные модули:
 
 setuptools
