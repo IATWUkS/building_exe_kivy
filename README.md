@@ -69,31 +69,52 @@ python -m PyInstaller single.spec
 Удобнее всего будет создать новую папку и скопировать сам .exe и json файлы.
 Важно сохранить структуру проекта, которая была до этого.
 
-## Создание sfx архива
-Нужен WinRar.
+## Создание установщика.
+Скачиваем программу Smart Install Maker
 
-Правой кнопкой мыши по папке, куда вы перекинули .exe и json
+http://ru.sminstall.com/
 
-![image](https://user-images.githubusercontent.com/63918733/132247769-bd4431b6-4f8e-46ea-90cf-1091a26c825a.png)
+Ключ активации: name: phpbb3 serial: Q8ZZZ-MV417-E0P2T-3MA3L-N24UV
 
-После:
+Переходим в вкладку General
 
-![image](https://user-images.githubusercontent.com/63918733/132247810-090693ed-25fe-4d3d-872e-fafe83131ed0.png)
+![image](https://user-images.githubusercontent.com/63918733/133259236-bab2b0ad-66c2-49b3-bbb7-f025bef16054.png)
 
-Дальше:
 
-![image](https://user-images.githubusercontent.com/63918733/132247906-aff74286-a8ff-4be4-a062-188f9c79ee90.png)
+Product name - Название программы, больше тут ничего не нужно.
 
-Переходим вкладку
+В Save as можно указать путь, где будет лежать установщик.
 
-![image](https://user-images.githubusercontent.com/63918733/132247870-97318eb6-7c25-48a1-86be-0230db9eac83.png)
+Переходим во вкладку Files, на + добавляем папку с файлами. Скрины:
 
-Нажимаем на кнопку
+![image](https://user-images.githubusercontent.com/63918733/133259831-601d0305-b844-4f48-83ae-c85219226617.png)
 
-![image](https://user-images.githubusercontent.com/63918733/132247920-953c2ef4-7eed-4b42-a7cf-d1a55461ff78.png)
+Выбираем папку с файлами и жмем ок.
 
-Вводим путь
+![image](https://user-images.githubusercontent.com/63918733/133260038-fba44e8c-325a-4ca2-bd04-efa8eae70541.png)
 
-![image](https://user-images.githubusercontent.com/63918733/132247967-97053511-dff1-4393-aae1-ff1912425978.png)
+По итогу выйдет:
 
-Жмем ок и создаем sfx архив. На этом все.
+![image](https://user-images.githubusercontent.com/63918733/133260163-314243d0-eaa0-4513-be4b-c1f986b038de.png)
+
+В Dialogs найдите Destination path и измените его по примеру:
+
+![image](https://user-images.githubusercontent.com/63918733/133260476-a4210a6f-f5be-4e89-809e-41117d153d1d.png)
+
+Чтоб автоматически создавался ярлык зайдите в shortcuts, нажми на кнопку add и заполните по примеру:
+
+![image](https://user-images.githubusercontent.com/63918733/133260761-57b42cfa-2627-47ed-81f0-21a3d05d59b7.png)
+
+Чтоб автоматически запускать установку доп.программ, зайдите в Commands, дальше нажмите кнопку add(+) и заполните по примеру:
+
+![image](https://user-images.githubusercontent.com/63918733/133261022-d423e6cc-ce4c-450a-82c1-5b17faa848d1.png)
+
+Где после %InstallPath%\ введите названия программы, которая должна установиться.
+
+После нажмите 
+
+![image](https://user-images.githubusercontent.com/63918733/133261587-78032744-d5e8-4950-8388-2fbe31bade0a.png)
+
+Начнется сборка установщика, он появится в папке Documents
+
+На этом все.
