@@ -113,7 +113,7 @@ Product name - Название программы, больше тут ниче
 
 После нажмите 
 
-![image](https://user-images.githubusercontent.com/63918733/133261587-78032744-d5e8-4950-8388-2fbe31bade0a.png)
+![image](https://user-images.githubusercontent.com/63918733/133262055-cdd8abe9-8103-4d25-a297-21e2e578cd68.png)
 
 Начнется сборка установщика, он появится в папке Documents
 
